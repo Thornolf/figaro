@@ -57,7 +57,12 @@ module Figaro
     end
 
     def parse(path)
-      puts 'path'
+      puts 'PLEASE DONT BE CACHED'
+      puts 'PLEASE DONT BE CACHED'
+      puts 'PLEASE DONT BE CACHED'
+      puts 'PLEASE DONT BE CACHED'
+      puts 'PLEASE DONT BE CACHED'
+      puts 'PLEASE DONT BE CACHED'
       File.exist?(path) && YAML.load(ERB.new(File.read(path)).result) || {}
     end
 
