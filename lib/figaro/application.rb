@@ -66,9 +66,18 @@ module Figaro
         puts '---------------------'
 
         puts '---------------------'
-        puts "READ: #{ERB.new(File.read(path)).result}"
+        puts "READ: #{ERB.new(File.read(path)).result.nil?}"
         puts '---------------------'
       end
+
+      puts '---------------------'
+      puts "ERB.new result is nil ? #{ERB.new(File.read(path)).result.nil?}"
+      puts '---------------------'
+
+      puts '---------------------'
+      puts 'Going for the YAML.load'
+      puts '---------------------'
+
       File.exist?(path) && YAML.load(ERB.new(File.read(path)).result) || {}
     end
 
